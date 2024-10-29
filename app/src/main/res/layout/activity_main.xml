@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -36,7 +35,7 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="66dp">
+            android:layout_height="32dp">
 
             <TextView
                 android:id="@+id/textView"
@@ -53,17 +52,15 @@
                 android:max="200"
                 android:min="0" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="25dp"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="63dp">
+            android:layout_height="24dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="31dp">
 
             <TextView
                 android:id="@+id/textView2"
@@ -80,6 +77,10 @@
                 android:max="200"
                 android:min="0" />
         </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -105,10 +106,10 @@
                     android:text="Red" />
 
                 <RadioButton
-                    android:id="@+id/blue"
+                    android:id="@+id/magenta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Blue" />
+                    android:text="Magenta" />
 
                 <RadioButton
                     android:id="@+id/green"

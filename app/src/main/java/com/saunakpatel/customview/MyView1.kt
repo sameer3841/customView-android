@@ -16,7 +16,7 @@ class MyView1(context: Context?, attrs: AttributeSet?): View(context, attrs) {
 
     var circleRad: Float = 10f
     var circleX: Float = circleRad
-    private var color: Int = Color.RED;
+    var color: Int = Color.RED;
 
 
 

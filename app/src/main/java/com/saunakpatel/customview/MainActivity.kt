@@ -10,11 +10,11 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var myView1: MyView1;
-    private lateinit var checker: CheckBox;
-    private lateinit var pos: SeekBar;
-    private lateinit var rad: SeekBar;
-    private lateinit var colorGroup: RadioGroup;
+    private lateinit var myView1: MyView1
+    private lateinit var checker: CheckBox
+    private lateinit var pos: SeekBar
+    private lateinit var rad: SeekBar
+    private lateinit var colorGroup: RadioGroup
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
             myView1.drawCircle = isChecked
             myView1.invalidate()
         }
-
         colorGroup.setOnCheckedChangeListener { _, _ -> update() }
 
 
@@ -46,17 +45,14 @@ class MainActivity : AppCompatActivity() {
 
                 var newX = (progress.toFloat() / maxProgress) * (screenWidth - 2 * circleRadius)
 
-                if (progress == pos.min || newX < circleRadius) {
-                    newX = circleRadius
-                } else if (newX + circleRadius > screenWidth - circleRadius || progress == pos.max) {
+                if (progress == pos.min || newX < circleRadius) newX = circleRadius
+                else if (newX + circleRadius > screenWidth - circleRadius || progress == pos.max)
                     newX = screenWidth - circleRadius
-                }
 
                 myView1.circleX = newX
                 myView1.invalidate()
             }
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
@@ -72,13 +68,12 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun update(){
+    private fun update(){
         when (colorGroup.checkedRadioButtonId) {
             R.id.red -> myView1.color = Color.RED
-            R.id.blue -> myView1.color = Color.BLUE
+            R.id.magenta -> myView1.color = Color.MAGENTA
             R.id.green -> myView1.color = Color.rgb(0,255,0)
         }
-
         myView1.invalidate()
     }
 }
