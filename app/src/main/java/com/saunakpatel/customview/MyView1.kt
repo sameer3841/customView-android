@@ -5,26 +5,16 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import android.graphics.Point
-import android.graphics.PorterDuff
 import android.util.AttributeSet
 import android.view.View
 
 class MyView1(context: Context?, attrs: AttributeSet?): View(context, attrs) {
     var drawCircle: Boolean = false
-    private var paint: Paint
+    var paint: Paint = Paint()
 
     var circleRad: Float = 10f
     var circleX: Float = circleRad
-    var color: Int = Color.RED;
-
-
-
-
-    init {
-        paint = Paint()
-
-    }
+    var color: Int = Color.RED
 
     @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas){
@@ -34,7 +24,7 @@ class MyView1(context: Context?, attrs: AttributeSet?): View(context, attrs) {
         if (drawCircle) canvas.drawCircle(circleX, 200f, circleRad, paint)
         else canvas.drawColor(Color.TRANSPARENT)
 
-        canvas.drawRect(10f, 600f, 1070f, 800f, paintRect)
+        canvas.drawRect(10f, 750f, 1070f, 800f, paintRect)
 
     }
 }
